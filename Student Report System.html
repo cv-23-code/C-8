@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Report System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    form input, form select, form button {
+      flex: 1 1 200px;
+      padding: 10px;
+      font-size: 1rem;
+    }
+    form button {
+      background: #27ae60;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background: #2c3e50;
+      color: white;
+    }
+    @media (max-width: 768px) {
+      form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Student Report System</h1>
+
+  <form id="studentForm">
+    <input type="text" id="studentName" placeholder="Student Name" required />
+    <input type="text" id="studentID" placeholder="Student ID" required />
+    <input type="text" id="subject" placeholder="Subject" required />
+    <input type="number" id="marks" placeholder="Marks" required />
+    <button type="submit">Add Student</button>
+  </form>
+
+  <table id="reportTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Student rows will appear here -->
+    </tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById('studentForm');
+    const tableBody = document.querySelector('#reportTable tbody');
+
+    let students = JSON.parse(localStorage.getItem('students')) || [];
+
+    function renderTable() {
+      tableBody.innerHTML = '';
+      students.forEach((student, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${student.name}</td>
+          <td>${student.id}</td>
+          <td>${student.subject}</td>
+          <td>${student.marks}</td>
+          <td><button onclick="deleteStudent(${index})" style="color:red;">Delete</button></td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function deleteStudent(index) {
+      students.splice(index, 1);
+      localStorage.setItem('students', JSON.stringify(students));
+      renderTable();
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('studentName').value;
+      const id = document.getElementById('studentID').value;
+      const subject = document.getElementById('subject').value;
+      const marks = document.getElementById('marks').value;
+
+      students.push({ name, id, subject, marks });
+      localStorage.setItem('students', JSON.stringify(students));
+      renderTable();
+      form.reset();
+    });
+
+    renderTable();
+  </script>
+
+</body>
+</html>
