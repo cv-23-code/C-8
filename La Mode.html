@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La mode</title>
+    <link rel="stylesheet" href="la mode.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    background-color: #333;
+    color: white;
+    padding:  20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+p{
+    color: #555;
+}
+.conatiner{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px; 
+}
+.col-2 img{
+    max-width: 100%;
+   padding: 50px 0;
+}
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.btn{
+    display: inline-block;
+    background-color: #ff523b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    margin-top: 30px 0;
+    transition: background 0.5s ease;
+}
+.btn:hover{
+    background-color: #472e2e;
+
+}
+.header{
+   background: radial-gradient(#fff,#ffd6d6);
+} 
+.header .row{
+    margin-top: 70px;
+}
+.categories{
+    margin: 70px 0;
+}
+.col-3{
+    flex-basis: 30%;
+   min-width: 250px;
+   margin-bottom: 30x
+}
+.col-3 img{
+    width: 100%;
+}
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.col-4{
+    flex-basis: 25%;
+    min-width: 200px;
+    margin-bottom: 50px;
+    padding: 50px 0;
+    transition: transform 0.5s ease;
+}
+.col-4 img{
+    width: 100%;
+}
+.title{
+   line-height: 60px;
+   position: relative;
+    margin: 0 auto 80px;
+    text-align: center;
+    color: #555;
+}
+.title::after{
+    content: "";
+    display: block;
+    width: 80px;
+    height: 5px;
+    background: #ff523b;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h4{
+color: #555;
+font-weight: normal;
+}
+.col-4{
+  font-size: 14px;
+}
+.rating.fa{
+    color: #ff523b;
+}
+.col-4:hover{
+    transform: translateY(-5px);
+}
+/*------------------ Offer -----------------*/
+.offer{
+    background:radial-gradient(#fff,#ffd6d6);
+    margin: 80px 0;
+    padding: 30px 0;
+}
+.col-2 .offer-img{
+    padding: 50px 0;
+}
+small{
+    font-size: 14px;
+    color: #555;
+}
+/*------------------testimonial-----------------*/
+.testimonial{
+   padding-top: 100px;
+}
+.testimonial .col-3{
+   text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+.testimonial .col-3 img{
+    width: 50px;
+   margin-top: 20px;
+    border-radius: 50%;
+}
+.testimonial .col-3:hover{
+  transform: translateY(-10px);
+}
+.testimonial .col-3 h3{
+   font-weight: 600;
+    font-size: 16px;
+    color: #555;
+}
+.col-3 p{
+    font-size: 12px;
+    color: #777;
+    margin: 12px 0;
+}
+/*------------------brands-----------------*/
+.brands{
+    margin: 100px auto;
+}
+.col-5{
+    width: 160px;
+}
+.col-5 img{
+    width: 100%;
+    cursor: pointer;
+   filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+.col-5 img:hover{
+    filter: grayscale(0);
+}
+/*------------------footer-----------------*/
+.site-footer{
+    background-color: #000;
+    color: #8a8a8a;
+    width: 100%;
+    font-size: 14px;
+    padding: 20px;
+    margin: 0%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.footer p{
+    color: #8a8a8a;
+}
+.footer h3{
+    color: #fff;
+    margin-bottom: 0px;
+}
+.footer-col-1,
+.footer-col-2,
+.footer-col-3,
+.footer-col-4{
+   min-width: 100px;
+   margin-bottom:  0;
+}
+.footer-col-1 {
+    flex-basis: 30%;
+}
+.footer-col-2 {
+    flex: 1;
+    text-align: center;
+}
+.footer-col-2 img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+.footer-col-3,
+.footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+}
+.app-logo{
+    margin-top: 20px;
+}
+.app-logo img{
+    width: 150px;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+.copyright{
+    text-align: center;
+}
+.menu-icon{
+    width: 28px;
+    margin-left: 20px;
+}
+
+/*------------------all products page-----------------*/
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50px;
+}
+select{
+    border:1px solid #ff523b;
+    padding: 5px;
+}
+/*------------------media query-----------------*/
+@media only screen and (max-width:800px){
+    nav ul{
+        position:absolute;
+        top:70px;
+        left: 0;
+        background: #333;
+        width: 100px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease;
+    }
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+       margin-bottom: 10px;
+    }
+    nav ul li a{
+        color: #fff;
+    }
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+}
+/*---media  query for less than 600 screen size---*/
+@media only screen and (max-width:600px){
+    .row{
+        text-align: center;
+    }
+    .col-2,.col-3,.col-4{
+        flex-basis: 100%;
+    }
+}
+    </style>
+<body>
+    <div class="header">
+    <div class="conatainer">
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://lamodestyle.com/wp-content/uploads/2019/02/la-mode-logo.png" width="125px">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">view collection</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+           <img src="https://www.freeiconspng.com/uploads/shopping-cart-icon-19.png" width="30px" height="30px" >
+            <img src="https://tse2.mm.bing.net/th/id/OIP.eYn8wtSjh661OurAqmtOwQHaHa?r=0&cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" class="menu-icon" width="30px" height="30px" onclick="toggleMenu()">
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <h1>The best fashion trends in dresses are here!! update your new style</h1>
+            <p>Discover the latest styles and trends in women's fashion. From elegant dresses to casual wear, we have it all!</p><br>
+            <a href="#" class="btn">explore now &#8594;</a>
+        </div>
+        <div class="col-2">
+            <img src="https://i.pinimg.com/originals/ed/68/b4/ed68b4d97850424512f38533703d9fe5.jpg" >
+        </div>
+    </div>
+    </div>
+    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+    </html>
+    <!------featured categories-------->
+    <div class="categories">    
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="https://www.julyprom.com/cdn/shop/products/1_39b21611-232d-4441-9f6d-2e62212151e7.jpg">
+                </div>
+                <div class="col-3">
+                    <img src="https://m.media-amazon.com/images/I/61NlhsuvObL._AC_SY500_.jpg">
+                </div>
+                <div class="col-3">
+                    <img src="https://cottagecore-dress.com/wp-content/uploads/5a260-summer-flower-embroidered-fairy-dress.jpg" >
+                </div>
+            </div>
+             </div>
+        </div>
+        <!---featured products--->
+        <div class="small-container">
+            <h2 class="title">Featured Products</h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="https://thf.bing.com/th/id/OIP.NPWBBfpedlrCjBe2mhUCnQHaKY?w=232&h=325&c=7&r=0&o=5&cb=thfc1&pid=1.20" >
+                    <h4>sky blue floral dress</h4>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐</span>
+                        </div>
+                    <p>$50.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.4TUsG-UgGcTlpxYLbSYj8gHaKG?r=0&cb=thfc1&w=790&h=1078&rs=1&pid=ImgDetMain&o=7&rm=3" >
+                    <h4>cream sleeveless floral dress</h4>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+                    <p>$60.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="https://missjophiel.com/cdn/shop/files/2023276-2_9f3cbe5b-fa37-46e3-bf0e-2371fabeb1d9.jpg?v=1722645969&width=990" >
+                    <h4>white lace dress</h4>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐</span>
+                        </div>
+                    <p>$70.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="https://images.edressit.com/ProductImages/420x633/201504/c487fe18-0836-49b1-a644-7bfae8d72177.jpg">
+                    <h4>lavender floral off shoulder dress</h4>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p>$80.00</p>
+                </div>
+                <h2 class="title">New Arrivals</h2>
+                 <div class="row">
+                <div class="col-4">
+                    <img src="https://i.etsystatic.com/16407217/r/il/cf1e4b/4004665281/il_794xN.4004665281_jflv.jpg" >
+                    <h4>red high slit body con dress</h4>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐</span>
+                        </div>
+                    <p>$50.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="https://i.pinimg.com/originals/cd/5c/a2/cd5ca2bd9fcea27a07bf1fec299438f3.jpg" >
+                    <h4>Royal blue net floral dress</h4>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+                    <p>$60.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="https://d8t2d5dqe90xj.cloudfront.net/media/catalog/product/cache/865447c34dba47d46ce4b55b3aa0a133/a/1/a1140_dustyrose.jpg" >
+                    <h4>pearl net lace dress</h4>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐</span>
+                        </div>
+                    <p>$70.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="https://thf.bing.com/th/id/OIP.saGxBJw69Mu5HA_MGMyg6AHaJ4?&rs=1&pid=ImgDetMain&o=7&rm=3">
+                    <h4>black floral  dress</h4>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p>$80.00</p>
+                </div>
+            </div>
+            <!--offer--->
+            <div class="offer">
+                <div class="small-container">
+                     <h2 class="title">offer</h2>
+                    <p>Get the latest floral print maxi dress at an exclusive price. Perfect for summer outings and casual wear.</p>
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.XnhrPHOQLZ-7exuBHKQBrQHaLH?r=0&cb=thfc1&pid=ImgDet&w=474&h=711&rs=1&o=7&rm=3" class="offer-img">
+                        </div>
+                        <div class="col-2">
+                              <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p>$85.00</p>
+               
+                            <p>Exclusively available on La Mode</p>
+                            <h1>Floral print maxi dress</h1>
+                            <small>Get the latest floral print maxi dress at an exclusive price. Perfect for summer outings and casual wear.</small><br>
+                            <a href="#" class="btn">Buy Now &#8594;</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <!--testimonial--->
+                <div class="testimonial">
+                    <div class="small-container">
+                        <h2 class="title">Customer Reviews</h2>
+                        <p>See what our customers are saying about their shopping experience with La Mode.</p>
+                        <div class="row">
+                            <div class="col-3">
+                                 <div class="rating">
+                        <span>⭐⭐⭐⭐</span>
+                                <i class="fa fa-quote-left"></i>
+                                <p>La Mode has the best collection of dresses. I love their floral prints and the quality is amazing!</p>
+                                <img src="https://tse2.mm.bing.net/th/id/OIP.0TzVzvMY78-q2AVy9NbGYQHaHa?r=0&cb=thfc1&w=729&h=729&rs=1&pid=ImgDetMain&o=7&rm=3" width="10px" height="120px" alt="Customer Image">
+                                <h3>Sarah Johnson</h3>
+                                 </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="rating">
+                        <span>⭐⭐⭐⭐</span>
+                                <i class="fa fa-quote-left"></i>
+                                <p>Their customer service is excellent. I received my order on time and it was exactly as described.</p>
+                                <img src="https://tse3.mm.bing.net/th/id/OIP.bHjpQB4kbXbomAGz4OPs2AHaE7?r=0&cb=thfc1&w=1024&h=682&rs=1&pid=ImgDetMain&o=7&rm=3" width="10px" height="120px" alt="Customer Image">
+                                <h3>Emily Davis</h3>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                <i class="fa fa-quote-left"></i>
+                                <p>I highly recommend La Mode for anyone looking for trendy and stylish dresses. Their prices are also very reasonable.</p>
+                                <img src="https://miro.medium.com/v2/resize:fit:1200/1*83TjZ2oehrq1NWG7xKdudQ.png" width="10px" height="120px" alt="Customer Image">
+                                <h3>Jessica Brown</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Brands-->
+                    <div class="brands">
+                        <div class="small-container">
+                            <h2 class="title">Popular Brands</h2>
+                            <div class="row">
+                                <div class="col-5">
+                                    <img src="https://vectorseek.com/wp-content/uploads/2023/07/Myntra-Logo-Vector.svg-.png" alt="Brand 1">
+                                </div>
+                                <div class="col-5">
+                                    <img src="https://tse4.mm.bing.net/th/id/OIP.Ig216D8i2VBY58Z4FkM8xgHaHa?r=0&cb=thfc1&w=1500&h=1500&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Brand 2">
+                                </div>
+                                <div class="col-5">
+                                    <img src="https://tse1.mm.bing.net/th/id/OIP.tsBmY_aepvVIxMbA51CmVAHaHa?r=0&cb=thfc1&w=512&h=512&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Brand 3">
+                                </div>
+                                <div class="col-5">
+                                    <img src="https://www.pngall.com/wp-content/uploads/5/PayPal-Logo-Transparent.png" alt="Brand 4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--footer-->
+                    <footer class="site-footer">
+                    <div class="footer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-1">
+                                    <h3>download our app</h3>
+                                    <p>Get the latest updates and exclusive offers by downloading our app. Download app for Android and iOS mobile Phone.</p>
+                                    <div class="app-logo">
+                                    <img src="https://i.pinimg.com/736x/ca/65/63/ca6563b0ccede8bf05663ebb080acb8f.jpg" alt="App Store" width="150px">
+                                    <img src="https://images.ctfassets.net/dc38r8bijjm5/4e8C3n9cuLcYm8X2RKpcO4/c43e1c73d286730b2b29bd7bd18c8674/google-play.jpg" alt="Play Store" width="150px">
+                                    </div>
+                                </div>
+                                <div class="footer-col-1">
+                                    <img src="https://lamodestyle.com/wp-content/uploads/2019/02/la-mode-logo.png" width="180px" >
+                                    <h3>about us</h3>
+                                    <p>La Mode is a leading fashion retailer offering a wide range of trendy and stylish clothing for women. Our mission is to provide high-quality fashion at affordable prices.</p>
+                                </div>
+                                <div class="footer-col-2">
+                                    <h3>Contact Us</h3>
+                                    <p>Email: support@lamode.com</p>
+                
+                                </div>
+                                <div class="footer-col-2">
+                                    <h3>Follow Us</h3>
+                                    <p>Stay connected with us on social media for the latest trends and updates.</p>
+                                    <div class="icon">
+                                       <img src="https://www.pngmart.com/files/13/Instagram-Logo-PNG-Image-1.png " width="90">
+                                       <img src="https://www.pngmart.com/files/15/Circle-Facebook-Logo-PNG-Transparent-Picture.png" width="50">
+                                        <img src="https://freelogopng.com/images/all_img/1657045610twitter-icon-transparent.png" width="70">
+                                    </div>
+                                    <div class="footer-col-3">
+                                        <h3>Useful Links</h3>
+                                        <ul>
+                                            <li><a href="#">Privacy Policy</a></li>
+                                            <li><a href="#">Terms of Service</a></li>
+                                            <li><a href="#">Return Policy</a></li>
+                                            <li><a href="#">Shipping Information</a></li>
+                                        </ul>
+                                    </div>
+                                    <hr>
+                                    <p class="copyright">© 2023 La Mode. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- JavaScript for menu toggle -->
+            <script>
+                var MenuItems = document.getElementById("MenuItems");
+                MenuItems.style.maxHeight = "0px";
+                function toggleMenu(){
+                    if(MenuItems.style.maxHeight == "0px"){
+                        MenuItems.style.maxHeight = "200px";
+                    }else{
+                        MenuItems.style.maxHeight = "0px";
+                    }
+                }
+            </script>
+        </body>
+    </html>
